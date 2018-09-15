@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+--------------------计算属性累计总价格 计算属性getter用法······························
+<div id="app">
+ 总价:{{prices}}
+</div>
+-----------------------------计算属性setter用法··································
+<div id="app1">
+    姓名:{{fullName}}
+</div>
+-----------------------------Vue实例间的属性依赖··································
+<div id="app3A"></div>
+<div id="app3B">
+    {{ reversedText }}
+</div>
+--------------------------v-if,v-else-if,v-else··································
+<div id="sb">
+    <div v-once="v-once">aaaaaaaaaaaa</div>
+</div>
+<div id="app4">
+    <p v-if="status === 1" >当status为1时显示该行</p>
+    <p v-else-if="status ===2">当status为2时显示该行</p>
+    <p v-else="v-else">否则不显示该行</p>
+    <input type="button" value="点击" v-on:click="changeStatus" />
+</div>
+--------------------------v-for列表循环··································
+<div id="app5">
+ <ul>
+     <li v-for="(book,index) in books">{{index}}-{{book.name|changeName}}</li>
+ </ul>
+  <input type="text" placeholder="请输入需要添加的书名" v-model="bookName" />
+    <input type="button" value="添加图书" v-on:click="addBook" />
+    <input type="button" value="删除图书" v-on:click="delBook" />
+</div>
+--------------------------v-for列表循环 遍历属性··································
+<div id="app6">
+   <ul>
+       <li v-for="value in user">{{value}}</li>
+   </ul>
+    <ul>
+        <li v-for="(value,key,index) in user">{{index+1}}{{key}}:{{value}}</li>
+    </ul>
+</div>
+<script src="../../static/js/vue.min.js"></script>
+<script src="../../static/doJs/B.js"></script>
+</body>
+</html>

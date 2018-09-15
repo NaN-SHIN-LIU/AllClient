@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+----------------------------------------------------------用例1 数据双向绑定-------------------------------------------------
+<div id="app">
+    <input type="text" v-model="name" placeholder="请输入您的姓名"/>
+    <H1>欢迎{{name}}加入我们的行列</H1>
+</div>
+----------------------------------------------------------用例2 js简单时钟-------------------------------------------------
+<div id="app1">
+    <h2>{{date|formateDate('aaaa','bbbbb')}}</h2>
+</div>
+----------------------------------------------------------用例3 显示html内容-------------------------------------------------
+<div id="app2">
+    <span v-html="link"></span>
+</div>
+----------------------------------------------------------用例4 简单计算-------------------------------------------------
+<div id="app3">
+    <span>{{number/10}}</span>
+    <span>{{flag?'确定':'不确定'}}</span>
+    <span>{{text.split(',').reverse().join(',')}}</span>
+</div>
+----------------------------------------------------------指令操作v-if-------------------------------------------------
+<div id="app4">
+    <input type="text" v-if="isShow"></input>
+</div>
+----------------------------------------------------------动态更新CSS-------------------------------------------------
+<div id="app5">
+    <a  v-bind:href="url"></a>
+    <img v-bind:src="imgUrl"></img>
+</div>
+----------------------------------------------------------动态更新显示隐藏元素-------------------------------------------------
+<div id="app6">
+    <input type="text" v-if="isShow"></input>
+    <button v-on:click="clickButton">{{showText}}</button>
+</div>
+<script src="../../static/js/vue.min.js"></script>
+    <script src="../../static/doJs/A.js"></script>
+</body>
+</html>
