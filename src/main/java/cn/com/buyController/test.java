@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class test {
     @RequestMapping("indexPage")
     public String indexPage(){
-        return "A";
+        System.out.println("aaaaaaaaaaa");return "A";
     }
     @RequestMapping("B")
     public String viewBpage(){
